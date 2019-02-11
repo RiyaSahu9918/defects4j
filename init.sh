@@ -81,6 +81,7 @@ cd "$BASE" && wget -nv -N "$MAJOR_URL/$MAJOR_ZIP" \
 #
 echo
 echo "Setting up EvoSuite ... "
+EVOSUITE_VERSION="1.0.6"
 EVOSUITE_URL="https://github.com/EvoSuite/evosuite/releases/download/v${EVOSUITE_VERSION}"
 EVOSUITE_JAR="evosuite-${EVOSUITE_VERSION}.jar"
 EVOSUITE_RT_JAR="evosuite-standalone-runtime-${EVOSUITE_VERSION}.jar"
@@ -138,7 +139,6 @@ cd "$DIR_LIB_GEN" && [ ! -f grt.jar ] \
 # Set symlink for the supported version of GRT and JTExpert
 ln -sf "$DIR_LIB_GEN/grt.jar" "$DIR_LIB_GEN/grt-current.jar"
 ln -sf "$DIR_LIB_GEN/JTExpert/JTExpert-1.4.jar" "$DIR_LIB_GEN/jtexpert-current.jar"
->>>>>>> origin/java-8-support
 
 ################################################################################
 #
