@@ -199,7 +199,7 @@ $ENV{D4J_DIR_LOG}             = "$LOG_DIR";
 $ENV{D4J_DIR_TESTGEN_LIB}     = "$TESTGEN_LIB_DIR";
 $ENV{D4J_CLASS_BUDGET}        = "$TIME";
 # Use test_id and bug_id to compute the random seed!
-$ENV{D4J_SEED}                = ($TID*1000 + $BID);
+$ENV{D4J_SEED}                = "$TID"; #($TID*1000 + $BID);
 
 # Invoke the test generator
 Utils::exec_cmd("$TESTGEN_LIB_DIR/bin/$TOOL.sh", "Generating tests ($TOOL)")
