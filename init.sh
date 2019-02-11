@@ -80,13 +80,13 @@ cd "$BASE" && wget -nv -N "$MAJOR_URL/$MAJOR_ZIP" \
 #
 echo
 echo "Setting up EvoSuite ... "
-EVOSUITE_VERSION="0.2.0"
+EVOSUITE_URL="https://github.com/EvoSuite/evosuite/releases/download/v${EVOSUITE_VERSION}"
 EVOSUITE_JAR="evosuite-${EVOSUITE_VERSION}.jar"
 EVOSUITE_RT_JAR="evosuite-standalone-runtime-${EVOSUITE_VERSION}.jar"
 cd "$DIR_LIB_GEN" && [ ! -f "$EVOSUITE_JAR" ] \
-                  && wget -nv "$HOST_URL/$EVOSUITE_JAR"
+                  && wget -nv "$EVOSUITE_URL/$EVOSUITE_JAR"
 cd "$DIR_LIB_RT"  && [ ! -f "$EVOSUITE_RT_JAR" ] \
-                  && wget -nv "$HOST_URL/$EVOSUITE_RT_JAR"
+                  && wget -nv "$EVOSUITE_URL/$EVOSUITE_RT_JAR"
 # Set symlinks for the supported version of EvoSuite
 (cd "$DIR_LIB_GEN" && ln -sf "$EVOSUITE_JAR" "evosuite-current.jar")
 (cd "$DIR_LIB_RT" && ln -sf "$EVOSUITE_RT_JAR" "evosuite-rt.jar")
@@ -109,6 +109,35 @@ cd "$DIR_LIB_GEN" && [ ! -f "$REPLACECALL_JAR" ] \
 (cd "$DIR_LIB_GEN" && ln -sf "$RANDOOP_JAR" "randoop-current.jar")
 (cd "$DIR_LIB_GEN" && ln -sf "$REPLACECALL_JAR" "replacecall-current.jar")
 (cd "$DIR_LIB_GEN" && jar -xf "$REPLACECALL_JAR" "default-replacements.txt")
+
+#
+# Download T3
+#
+echo
+echo "Setting up T3 ... "
+T3_URL="http://www.staff.science.uu.nl/~prase101/research/projects/T2/T3/T3_dist.zip"
+T3_JAR="T3.jar"
+cd "$DIR_LIB_GEN" && [ ! -f "$T3_JAR" ] \
+                  && wget -nv "$T3_URL" \
+                  && unzip -j T3_dist.zip "$T3_JAR" -d .
+# Set symlink for the supported version of T3
+ln -sf "$DIR_LIB_GEN/$T3_JAR" "$DIR_LIB_GEN/t3-current.jar"
+ln -sf "$DIR_LIB_GEN/$T3_JAR" "$DIR_LIB_RT/t3-rt.jar"
+
+#
+# Download JTExpert and GRT
+#
+echo
+echo "Setting up JTExpert and GRT ... "
+# TODO: Download JTExpert and GRT from official release websites, once they exist.
+JTE_GRT_URL="https://people.cs.umass.edu/~rjust/jte_grt.zip"
+cd "$DIR_LIB_GEN" && [ ! -f grt.jar ] \
+                  && wget -nv "$JTE_GRT_URL" \
+                  && unzip jte_grt.zip
+# Set symlink for the supported version of GRT and JTExpert
+ln -sf "$DIR_LIB_GEN/grt.jar" "$DIR_LIB_GEN/grt-current.jar"
+ln -sf "$DIR_LIB_GEN/JTExpert/JTExpert-1.4.jar" "$DIR_LIB_GEN/jtexpert-current.jar"
+>>>>>>> origin/java-8-support
 
 ################################################################################
 #
