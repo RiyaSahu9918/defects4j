@@ -42,7 +42,7 @@ source $D4J_DIR_TESTGEN_LIB/bin/_tool.util
 #
 EXECUTION_VARIABLES="configuration_id,group_id,Random_Seed,TARGET_CLASS,Size,Result_Size,Length,Result_Length,search_budget,Total_Time,criterion,Statements_Executed,Tests_Executed"
 GA_VARIABLES="algorithm,Fitness_Evaluations,Generations,population,mutation_rate,crossover_function,crossover_rate,selection_function,rank_bias,tournament_size"
-GOALS_VARIABLES="Total_Goals,Coverage,Lines,Covered_Lines,LineCoverage,Total_Branches,Covered_Branches,BranchCoverage,ExceptionCoverage,Mutants,WeakMutationScore,OutputCoverage,Total_Methods,MethodCoverage,MethodNoExceptionCoverage,CBranchCoverage,MutationScore"
+GOALS_VARIABLES="Total_Goals,Coverage,Lines,Covered_Lines,LineCoverage,Total_Branches,Covered_Branches,BranchCoverage,ExceptionCoverage,Mutants,WeakMutationScore,OutputCoverage,Total_Methods,MethodCoverage,MethodNoExceptionCoverage,CBranchCoverage"
 
 DDU_VARIABLES="DDUScore"
 VDDU_VARIABLES="VDDUScore"
@@ -82,7 +82,7 @@ for class in $(cat $D4J_FILE_TARGET_CLASSES); do
         -Dstopping_condition=MaxTime \
         -Dstop_zero=false \
         -Dcriterion=$CRITERION \
-        -Danalysis_criteria=LINE,BRANCH,EXCEPTION,WEAKMUTATION,OUTPUT,METHOD,METHODNOEXCEPTION,CBRANCH,STRONGMUTATION \
+        -Danalysis_criteria=LINE,BRANCH,EXCEPTION,WEAKMUTATION,OUTPUT,METHOD,METHODNOEXCEPTION,CBRANCH \
         -Dtimeline_interval=10000 \
         -Doutput_variables=$EXECUTION_VARIABLES,$GA_VARIABLES,$GOALS_VARIABLES,$LINE_TIMELINE_VARIABLES,$BRANCH_TIMELINE_VARIABLES,$EXCEPTION_TIMELINE_VARIABLES,$WEAKMUTATION_TIMELINE_VARIABLES,$OUTPUT_TIMELINE_VARIABLES,$METHOD_TIMELINE_VARIABLES,$METHODNOEXCEPTION_TIMELINE_VARIABLES,$CBRANCH_TIMELINE_VARIABLES,$EXTRA_TIMELINE_VARIABLES,$DDU_TIMELINE_VARIABLES,$VDDU_TIMELINE_VARIABLES \
         -Dcoverage=true \
