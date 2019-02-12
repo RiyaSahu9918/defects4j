@@ -77,6 +77,7 @@ for class in $(cat $D4J_FILE_TARGET_CLASSES); do
         -Dp_reflection_on_private=0.5 \
         -Dreflection_start_percent=0.8 \
         -seed $D4J_SEED \
+        -Dtest_archive=false \
         -Dsearch_budget=$D4J_CLASS_BUDGET \
         -Dstopping_condition=MaxTime \
         -Dcriterion=$CRITERION \
