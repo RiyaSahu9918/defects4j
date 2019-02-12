@@ -60,8 +60,8 @@ OUTPUT_TIMELINE_VARIABLES="OutputFitnessTimeline,OutputCoverageTimeline"
 METHOD_TIMELINE_VARIABLES="MethodFitnessTimeline,MethodCoverageTimeline"
 METHODNOEXCEPTION_TIMELINE_VARIABLES="MethodNoExceptionFitnessTimeline,MethodNoExceptionCoverageTimeline"
 CBRANCH_TIMELINE_VARIABLES="CBranchFitnessTimeline,CBranchCoverageTimeline"
-DDU_TIMELINE_VARIABLES="DDUFitnessTimeline" # TODO I believe it needs to be implemented
-VDDU_TIMELINE_VARIABLES="VDDUFitnessTimeline" # TODO I believe it needs to be implemented
+DDU_TIMELINE_VARIABLES="DDUFitnessTimeline"
+VDDU_TIMELINE_VARIABLES="VDDUFitnessTimeline"
 
 #
 # Call the test generation for each target class
