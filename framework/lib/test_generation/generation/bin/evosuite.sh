@@ -80,6 +80,7 @@ for class in $(cat $D4J_FILE_TARGET_CLASSES); do
         -Dtest_archive=false \
         -Dsearch_budget=$D4J_CLASS_BUDGET \
         -Dstopping_condition=MaxTime \
+        -Dstop_zero=false \
         -Dcriterion=$CRITERION \
         -Danalysis_criteria=LINE,BRANCH,EXCEPTION,WEAKMUTATION,OUTPUT,METHOD,METHODNOEXCEPTION,CBRANCH,STRONGMUTATION \
         -Dtimeline_interval=10000 \
