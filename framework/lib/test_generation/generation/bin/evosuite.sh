@@ -79,6 +79,7 @@ for class in $(cat $D4J_FILE_TARGET_CLASSES); do
         -seed $D4J_SEED \
         -Dtest_archive=false \
         -Dsearch_budget=$D4J_CLASS_BUDGET \
+        -Dextra_timeout=300 \
         -Dstopping_condition=MaxTime \
         -Dstop_zero=false \
         -Dcriterion=$CRITERION \
