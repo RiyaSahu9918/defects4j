@@ -109,7 +109,15 @@ bug. The latter is the default behavior.
 =cut
 my %criteria = ( branch         => 100,
                  weakmutation   => 100,
-                 strongmutation => 200
+                 strongmutation => 200,
+		 VDDU => 1000,
+		 DDU_METHOD => 1000,
+         RHO => 200,
+         VMDDU => 1000,
+         VRDDU => 1000,
+         VCDDU => 1000,
+         VCMDDU1 => 1000,
+         VCMDDU2 => 1000,
                );
 
 =pod

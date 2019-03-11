@@ -52,13 +52,13 @@ cd "$BASE" && wget -nv -N "$MAJOR_URL/$MAJOR_ZIP" \
 echo
 echo "Setting up EvoSuite ... "
 EVOSUITE_VERSION="1.0.5"
-#EVOSUITE_URL="https://github.com/EvoSuite/evosuite/releases/download/v${EVOSUITE_VERSION}"
+EVOSUITE_URL="https://github.com/EvoSuite/evosuite/releases/download/v${EVOSUITE_VERSION}"
 EVOSUITE_JAR="evosuite-${EVOSUITE_VERSION}.jar"
 EVOSUITE_RT_JAR="evosuite-standalone-runtime-${EVOSUITE_VERSION}.jar"
-#cd "$DIR_LIB_GEN" && [ ! -f "$EVOSUITE_JAR" ] \
-#                  && wget -nv "$EVOSUITE_URL/$EVOSUITE_JAR"
-#cd "$DIR_LIB_RT"  && [ ! -f "$EVOSUITE_RT_JAR" ] \
-#                  && wget -nv "$EVOSUITE_URL/$EVOSUITE_RT_JAR"
+cd "$DIR_LIB_GEN" && [ ! -f "$EVOSUITE_JAR" ] \
+                  && wget -nv "$EVOSUITE_URL/$EVOSUITE_JAR"
+cd "$DIR_LIB_RT"  && [ ! -f "$EVOSUITE_RT_JAR" ] \
+                  && wget -nv "$EVOSUITE_URL/$EVOSUITE_RT_JAR"
 # Set symlinks for the supported version of EvoSuite
 (cd "$DIR_LIB_GEN" && ln -sf "$EVOSUITE_JAR" "evosuite-current.jar")
 (cd "$DIR_LIB_RT" && ln -sf "$EVOSUITE_RT_JAR" "evosuite-rt.jar")
